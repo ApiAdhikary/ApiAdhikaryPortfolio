@@ -429,6 +429,7 @@ section{
     margin-bottom: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
+    height: 575px;
 }
 .projects .projects-content .card:hover{
     background: crimson;
