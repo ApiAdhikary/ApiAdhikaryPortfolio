@@ -11,6 +11,9 @@
 	box-sizing: border-box;
 	text-decoration: none;
 }
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .max-width{
     max-width: 1300px;
     padding: 0 80px;

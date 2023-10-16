@@ -47,6 +47,48 @@ $(document).ready(function(){
         backSpeed: 60,
         loop: true
     });
+
+    let form = document.getElementById("contact-form");
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        let data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                Swal.fire(
+                    'Success',
+                    'Thanks for your submission!',
+                    'success'
+                )
+                form.reset()
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        console.log(data["errors"].map(error => error["message"]).join(", "));
+                    } else {
+                        Swal.fire(
+                            'Error',
+                            'Oops! There was a problem submitting your form',
+                            'error'
+                        )
+                    }
+                })
+            }
+        }).catch(error => {
+            Swal.fire(
+                'Error',
+                'Oops! There was a problem submitting your form',
+                'error'
+            )
+        });
+    }
+    form.addEventListener("submit", handleSubmit)
 });
 
 $(function(){
@@ -58,10 +100,4 @@ $(function(){
     });
 
 });
-
-
-
-
-
-
 
