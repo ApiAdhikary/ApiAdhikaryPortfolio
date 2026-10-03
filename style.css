@@ -127,7 +127,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/profile.jpg") no-repeat center  ;
+    background: url("images/IMG_0790.HEIC") no-repeat center  ;
     height: 100vh;
     color: #fff;
     min-height: 500px;
